@@ -6,15 +6,15 @@
   <button class="btn">Dashboard</button>
   <button class="btn">Heroes</button>
   <div>
-    <label for="name">Name:</label>
-    <input name="name" [(ngModel)]="hero.name">
-  </div>
-  <div>
     <ul class="heroes">
       List of heroes:
-      <li *ngFor="let hero of heroes" [class.selectedHero]="hero.selected" (click)="isSelected(hero)">
+      <li *ngFor="let hero of heroes" [class.selected]="hero.selected" (click)="isSelected(hero)">
         <span class="badge" >{{hero.id}}</span>{{hero.name}}
       </li>
     </ul>
+  </div>
+  <div>
+    <h2>You selected:</h2>
+    <h3 *ngIf="!(detailHeroName == null)">{{detailHeroName}}, hero ID is equal to {{detailHeroID}}</h3>
   </div>
 </div>

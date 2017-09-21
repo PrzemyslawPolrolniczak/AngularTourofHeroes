@@ -8,14 +8,23 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Tour of Heroes';
   hero: Hero = {
-    id: 1,
+    id: 69,
     name: 'batman'
   }
   heroes = HEROES;
+  detailHeroName: string;
+  detailHeroID: number;
 
   isSelected(hero) {
-    console.log(hero.name);
     hero.selected = !hero.selected;
+    if (hero.selected == true) {
+      this.detailHeroName = hero.name;
+      this.detailHeroID = hero.id;
+    } else {
+      this.detailHeroName = null;
+      this.detailHeroID = null;
+    }
+
   }
 }
 
