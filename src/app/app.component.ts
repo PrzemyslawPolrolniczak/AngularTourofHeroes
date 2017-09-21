@@ -12,16 +12,17 @@ export class AppComponent {
     name: 'batman'
   }
   heroes = HEROES;
-  selected: boolean;
+
   isSelected(hero) {
-    this.selected = !this.selected;
-    return this.selected;
+    console.log(hero.name);
+    hero.selected = !hero.selected;
   }
 }
 
 export class Hero {
   name: string;
   id: number;
+  selected?: boolean;
 }
 
 const HEROES: Hero[] = [
